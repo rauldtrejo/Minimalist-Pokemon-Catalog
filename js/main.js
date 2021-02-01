@@ -31,8 +31,38 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     return responseData.json()
                 })
                 .then((jsonData) => {
-                    let pokemon = jsonData
                     document.getElementById(`pokemonSprites`).remove()
+
+                    let pokemon = jsonData
+
+                    let pokemonName = document.createElement(`p`)
+                    let pokemonWeight = document.createElement(`p`)
+                    let pokemonHeight = document.createElement(`p`)
+                    let pokemonNameString = `${pokemon.name}`
+                    let pokemonWeightInKg = (pokemon.weight*100)/1000
+                    let pokemonHeightInMeters = pokemon.height/10
+                    pokemonName.innerText = pokemonNameString.toUpperCase()
+                    pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
+                    pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
+                    document.body.appendChild(pokemonName)
+                    document.body.appendChild(pokemonWeight)
+                    document.body.appendChild(pokemonHeight)
+
+                    jsonData.types.forEach(type => {
+                        let typeName = document.createElement(`p`)
+                        let typeString= `TYPE: ${type.type.name}`
+                        typeName.innerText = typeString.toUpperCase()
+                        document.body.appendChild(typeName)
+                        
+                    });
+
+                    jsonData.stats.forEach(stat => {
+                        let statName = document.createElement(`p`)
+                        let statString = `${stat.stat.name}: ${stat.base_stat}`
+                        statName.innerText = statString.toUpperCase()
+                        document.body.appendChild(statName)
+                        
+                    });
                     let pokemonFront = document.createElement(`img`)
                     let pokemonBack = document.createElement(`img`)
                     let pokemonOfficial = document.createElement(`img`)
