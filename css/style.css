@@ -56,4 +56,26 @@ body, html {
 
   #officialArt{
       max-width: 350px;
+      filter: drop-shadow(8px 8px 0px rgba(234, 65, 53, 0.781));
+  }
+  #frontSprite{
+    filter: drop-shadow(3px 3px 0px rgba(234, 65, 53, 0.555));
+  }
+
+  #backSprite{
+    filter: drop-shadow(3px 3px 0px rgba(234, 65, 53, 0.555));
+  }
+
+  #pokemonName{
+    color: rgb(234,65,53);
+    font-weight: 500;
+  }
+
+  footer{
+    position: fixed;
+    background-color: rgba(234, 65, 53, 0.904);
+    width: 100%;
+    bottom: 0;
+    color: rgb(247,247,247);
+    font-weight: 600;
   }
