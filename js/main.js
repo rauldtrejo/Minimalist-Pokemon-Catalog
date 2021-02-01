@@ -34,12 +34,19 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     document.getElementById(`pokemonSprites`).remove()
 
                     let pokemon = jsonData
+
                     let pokemonInfoDiv = document.createElement(`div`)
+                    let pokemonSpriteDiv = document.createElement(`div`)
+                    let PokemonFrontBack = document.createElement(`div`)
+
                     let pokemonName = document.createElement(`p`)
                     let pokemonWeight = document.createElement(`p`)
                     let pokemonHeight = document.createElement(`p`)
 
                     pokemonInfoDiv.setAttribute(`id`,`infoDiv`)
+                    pokemonSpriteDiv.setAttribute(`id`,`spriteDiv`)
+                    PokemonFrontBack.setAttribute(`id`,`frontBackDiv`)
+
                     pokemonName.setAttribute(`id`, `pokemonName`)
                     pokemonWeight.setAttribute(`id`,`pokemonWeight`)
                     pokemonHeight.setAttribute(`id`, `pokemonHeigt`)
@@ -52,7 +59,8 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
                     pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
 
-                    document.body.appendChild(pokemonInfoDiv)
+                    document.getElementById(`fetchedPokemon`).appendChild(pokemonInfoDiv)
+                    document.getElementById(`fetchedPokemon`).appendChild(pokemonSpriteDiv)
                     document.getElementById(`infoDiv`).appendChild(pokemonName)
                     document.getElementById(`infoDiv`).appendChild(pokemonWeight)
                     document.getElementById(`infoDiv`).appendChild(pokemonHeight)
@@ -76,13 +84,19 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     let pokemonBack = document.createElement(`img`)
                     let pokemonOfficial = document.createElement(`img`)
 
+                    pokemonFront.setAttribute(`id`,`frontSprite`)
+                    pokemonBack.setAttribute(`id`,`backSprite`)
+                    pokemonOfficial.setAttribute(`id`,`officialArt`)
+
                     pokemonFront.setAttribute(`src`, pokemon.sprites.front_default)
                     pokemonBack.setAttribute(`src`, pokemon.sprites.back_default)
                     pokemonOfficial.setAttribute(`src`, pokemon.sprites.other["official-artwork"].front_default)
-                    document.body.appendChild(pokemonFront)
-                    document.body.appendChild(pokemonBack)
-                    document.body.appendChild(pokemonOfficial)
 
+                    document.getElementById(`spriteDiv`).appendChild(pokemonOfficial)
+                    document.getElementById(`spriteDiv`).appendChild(PokemonFrontBack)
+
+                    document.getElementById(`frontBackDiv`).appendChild(pokemonFront)
+                    document.getElementById(`frontBackDiv`).appendChild(pokemonBack)
                 })
         }
         getPokemon()

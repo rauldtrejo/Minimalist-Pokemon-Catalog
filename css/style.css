@@ -37,3 +37,23 @@ body, html {
     font-weight: 200;
     background-color: rgb(247,247,247);
   }
+
+  #infoDiv{
+      margin-right: 10%;
+  }
+  #fetchedPokemon{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+  }
+
+  #frontBackDiv{
+      display: flex;
+      justify-content: center;
+  }
+
+  #officialArt{
+      max-width: 350px;
+  }
