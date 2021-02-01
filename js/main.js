@@ -34,25 +34,34 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     document.getElementById(`pokemonSprites`).remove()
 
                     let pokemon = jsonData
-
+                    let pokemonInfoDiv = document.createElement(`div`)
                     let pokemonName = document.createElement(`p`)
                     let pokemonWeight = document.createElement(`p`)
                     let pokemonHeight = document.createElement(`p`)
+
+                    pokemonInfoDiv.setAttribute(`id`,`infoDiv`)
+                    pokemonName.setAttribute(`id`, `pokemonName`)
+                    pokemonWeight.setAttribute(`id`,`pokemonWeight`)
+                    pokemonHeight.setAttribute(`id`, `pokemonHeigt`)
+
                     let pokemonNameString = `${pokemon.name}`
                     let pokemonWeightInKg = (pokemon.weight*100)/1000
                     let pokemonHeightInMeters = pokemon.height/10
+
                     pokemonName.innerText = pokemonNameString.toUpperCase()
                     pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
                     pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
-                    document.body.appendChild(pokemonName)
-                    document.body.appendChild(pokemonWeight)
-                    document.body.appendChild(pokemonHeight)
+
+                    document.body.appendChild(pokemonInfoDiv)
+                    document.getElementById(`infoDiv`).appendChild(pokemonName)
+                    document.getElementById(`infoDiv`).appendChild(pokemonWeight)
+                    document.getElementById(`infoDiv`).appendChild(pokemonHeight)
 
                     jsonData.types.forEach(type => {
                         let typeName = document.createElement(`p`)
                         let typeString= `TYPE: ${type.type.name}`
                         typeName.innerText = typeString.toUpperCase()
-                        document.body.appendChild(typeName)
+                        document.getElementById(`infoDiv`).appendChild(typeName)
                         
                     });
 
@@ -60,7 +69,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                         let statName = document.createElement(`p`)
                         let statString = `${stat.stat.name}: ${stat.base_stat}`
                         statName.innerText = statString.toUpperCase()
-                        document.body.appendChild(statName)
+                        document.getElementById(`infoDiv`).appendChild(statName)
                         
                     });
                     let pokemonFront = document.createElement(`img`)
@@ -79,3 +88,5 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
         getPokemon()
     }
 })
+
+document.getElementById(`pokemon-logo`).addEventListener(`click`,location.reload.bind(location))
