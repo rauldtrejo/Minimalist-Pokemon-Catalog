@@ -47,6 +47,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     let pokemonName = document.createElement(`p`)
                     let pokemonWeight = document.createElement(`p`)
                     let pokemonHeight = document.createElement(`p`)
+                    let pokemonType = document.createElement(`p`)
                     let pokemonNext = document.createElement(`p`)
                     let pokemonPrevious = document.createElement(`p`)
 
@@ -61,6 +62,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     pokemonName.setAttribute(`id`, `pokemonName`)
                     pokemonWeight.setAttribute(`id`,`pokemonWeight`)
                     pokemonHeight.setAttribute(`id`, `pokemonHeigt`)
+                    pokemonType.setAttribute(`id`,`type`)
 
                     let pokemonNameString = `${pokemon.name}`
                     let pokemonWeightInKg = (pokemon.weight*100)/1000
@@ -69,6 +71,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     pokemonName.innerText = pokemonNameString.toUpperCase()
                     pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
                     pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
+                    pokemonType.innerText=`TYPE:`
                     pokemonPrevious.innerText = `<`
                     pokemonNext.innerText = `>`
 
@@ -79,16 +82,15 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     document.getElementById(`infoDiv`).appendChild(pokemonName)
                     document.getElementById(`infoDiv`).appendChild(pokemonWeight)
                     document.getElementById(`infoDiv`).appendChild(pokemonHeight)
+                    document.getElementById(`infoDiv`).appendChild(pokemonType)
 
                     document.getElementById(`nextPreviousDiv`).appendChild(pokemonPrevious)
                     document.getElementById(`nextPreviousDiv`).appendChild(pokemonNext)
 
+
                     jsonData.types.forEach(type => {
-                        let typeName = document.createElement(`p`)
-                        typeName.setAttribute(`id`,`slot${type.slot}`)
-                        let typeString= `TYPE: ${type.type.name}`
-                        typeName.innerText = typeString.toUpperCase()
-                        document.getElementById(`infoDiv`).appendChild(typeName)
+                        let typeString= `${document.getElementById(`type`).innerText} ${type.type.name}`
+                        pokemonType.innerText = typeString.toUpperCase()
                         
                     });
 
@@ -144,13 +146,12 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                                         pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
                                         pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
 
-                                        // Clearing Type Data
-                                        document.getElementById(`slot1`).innerText=null
-                                        document.getElementById(`slot2`).innerText=null
+                                        // // Clearing Type Data
+                                        document.getElementById(`type`).innerText=`TYPE:`
                                         
                                         jsonData.types.forEach(type => {
-                                            let typeString= `TYPE: ${type.type.name}`
-                                            document.getElementById(`slot${type.slot}`).innerText = typeString.toUpperCase()
+                                            let typeString= `${document.getElementById(`type`).innerText} ${type.type.name}`
+                                            document.getElementById(`type`).innerText = typeString.toUpperCase()
                                         });
                     
                                         jsonData.stats.forEach(stat => {
@@ -176,48 +177,3 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
 document.getElementById(`pokemon-logo`).addEventListener(`click`,location.reload.bind(location))
 
 
-// document.getElementById("nextPreviousDiv").addEventListener("click", function (e) {
-//     if (e.target && e.target.nodeName == "P") {
-//         console.log("List item ", e.target.id, " was clicked!");
-//         let pokemon = `https://pokeapi.co/api/v2/pokemon/${e.target.id}`
-//         const getPokemon = (event) => {
-//             fetch(pokemon)
-//                 .then((responseData) => {
-//                     return responseData.json()
-//                 })
-//                 .then((jsonData) => {
-
-//                     let pokemon = jsonData
-
-//                     let pokemonId = jsondata.id
-
-//                     pokemonNext.setAttribute(`id`,`${pokemonId+1}`)
-//                     pokemonPrevious.setAttribute(`id`, `${pokemonId-1}`)
-
-//                     let pokemonNameString = `${pokemon.name}`
-//                     let pokemonWeightInKg = (pokemon.weight*100)/1000
-//                     let pokemonHeightInMeters = pokemon.height/10
-
-//                     pokemonName.innerText = pokemonNameString.toUpperCase()
-//                     pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
-//                     pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
-
-//                     jsonData.types.forEach(type => {
-//                         let typeString= `TYPE: ${type.type.name}`
-//                         typeName.innerText = typeString.toUpperCase()
-//                     });
-
-//                     jsonData.stats.forEach(stat => {
-//                         let statString = `${stat.stat.name}: ${stat.base_stat}`
-//                         statName.innerText = statString.toUpperCase()
-                        
-//                     });
-
-//                     pokemonFront.setAttribute(`src`, pokemon.sprites.front_default)
-//                     pokemonBack.setAttribute(`src`, pokemon.sprites.back_default)
-//                     pokemonOfficial.setAttribute(`src`, pokemon.sprites.other["official-artwork"].front_default)
-//                 })
-//         }
-//         getPokemon()
-//     }
-// })
