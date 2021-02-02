@@ -2,6 +2,8 @@ console.log(`Sanity Check`)
 
 let pokedexUrl = `https://pokeapi.co/api/v2/pokedex/1/`
 
+// The Folllowing function creates the main page, it fetches all pokemon entries, creates an img element, fetches the pokemon sprite from github and appends the img in a grid. At the end of the process it creates a grid that displays all the pokemon that exist.
+
 function getPokemons(event) {
     fetch(pokedexUrl)
         .then((responseData) => {
@@ -83,7 +85,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
 
                     jsonData.types.forEach(type => {
                         let typeName = document.createElement(`p`)
-                        typeName.setAttribute(`id`,`type`)
+                        typeName.setAttribute(`id`,`slot${type.slot}`)
                         let typeString= `TYPE: ${type.type.name}`
                         typeName.innerText = typeString.toUpperCase()
                         document.getElementById(`infoDiv`).appendChild(typeName)
@@ -93,7 +95,7 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                     jsonData.stats.forEach(stat => {
                         let statName = document.createElement(`p`)
                         let statString = `${stat.stat.name}: ${stat.base_stat}`
-                        statName.setAttribute(`id`,`stat`)
+                        statName.setAttribute(`id`,`${stat.stat.name}`)
                         statName.innerText = statString.toUpperCase()
                         document.getElementById(`infoDiv`).appendChild(statName)
                         
@@ -141,15 +143,19 @@ document.getElementById("pokemonSprites").addEventListener("click", function (e)
                                         pokemonName.innerText = pokemonNameString.toUpperCase()
                                         pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`
                                         pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`
-                    
+
+                                        // Clearing Type Data
+                                        document.getElementById(`slot1`).innerText=null
+                                        document.getElementById(`slot2`).innerText=null
+                                        
                                         jsonData.types.forEach(type => {
                                             let typeString= `TYPE: ${type.type.name}`
-                                            document.getElementById(`type`).innerText = typeString.toUpperCase()
+                                            document.getElementById(`slot${type.slot}`).innerText = typeString.toUpperCase()
                                         });
                     
                                         jsonData.stats.forEach(stat => {
                                             let statString = `${stat.stat.name}: ${stat.base_stat}`
-                                            document.getElementById(`stat`).innerText = statString.toUpperCase()
+                                            document.getElementById(`${stat.stat.name}`).innerText = statString.toUpperCase()
                                             
                                         });
                     
