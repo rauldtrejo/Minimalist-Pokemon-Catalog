@@ -4,6 +4,14 @@
     left: 45%;
     margin-top: 1%;
     margin-bottom: 1%;
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+#pokemon-logo:hover{
+    cursor:pointer;
+    margin-bottom: 2%;
 }
 
 img.pokemonSprite:hover {
@@ -93,8 +101,17 @@ body, html {
   }
 
   #nextPreviousDiv p{
-      margin: 5% 10% 5% 10%;
-      font-size: 40px;
-      font-weight: 200;
+      margin: 4% 10% 4% 10%;
+      font-size: 50px;
+      font-weight: 300;
       color: rgb(234,65,53);
   }
+
+  #nextPreviousDiv p:hover{
+    filter: drop-shadow(0px 10px 0px #007ce29d);
+    cursor:pointer;
+    -webkit-transition: filter 0.1s ease-in;
+    -moz-transition: filter 0.1s ease-in;
+    -o-transition: filter 0.1s ease-in;
+   
+}
