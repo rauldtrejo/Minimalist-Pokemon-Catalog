@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minimalist PokeCatalog</title>
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -14,8 +14,14 @@
 
     <header>
         <img id="pokemon-logo" src="images/minimalistPokemon.png" alt="">
-        <input id="searchbar" type="text">
-        <button id="searchButton">Search</button>
+        <!-- <input id="searchbar" type="text"> -->
+        <form autocomplete="off" onsubmit="return false" >
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="myCountry" placeholder="Search Pokemon">
+            </div>
+            <button id="searchButton">Search</button>
+            <!-- <input type="submit"> -->
+          </form>
     </header>
     
     <div id="mainDiv">
