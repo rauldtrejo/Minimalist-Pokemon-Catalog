@@ -188,8 +188,9 @@ document.getElementById(`pokemon-logo`).addEventListener(`click`, location.reloa
 
 
 const getPokemonFromMainPageSearch = (event) => {
-    let pokemonSearch = document.getElementById(`myInput`).value
+    let pokemonSearch = document.getElementById(`searchPokemonInput`).value
     let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonSearch}`
+    document.getElementById(`searchPokemonInput`).value = ``
 
     console.log(pokemonSearch)
     console.log(pokemonUrl)
@@ -199,9 +200,11 @@ const getPokemonFromMainPageSearch = (event) => {
         })
         .then((jsonData) => {
 
-            ifCond = document.getElementById(`pokemonSprites`).innerHTML
-
-            if (ifCond == '') {
+            let pokemonGrid = document.getElementById(`pokemonSprites`).innerHTML
+            if(pokemonSearch == ''){
+            }
+            else{
+            if (pokemonGrid == '') {
                 let pokemon = jsonData
 
                 let pokemonId = jsonData.id
@@ -217,8 +220,6 @@ const getPokemonFromMainPageSearch = (event) => {
 
                 pokemonNext.setAttribute(`value`,`${pokemonId+1}`)
                 pokemonPrevious.setAttribute(`value`,`${pokemonId-1}`)
-                // document.getElementById(`${pokemonId}`).setAttribute(`id`,`${pokemonId+1}`)
-                // pokemonPrevious.setAttribute(`id`, `${pokemonId-1}`)
 
                 let pokemonNameString = `${pokemon.name}`
                 let pokemonWeightInKg = (pokemon.weight * 100) / 1000
@@ -398,7 +399,7 @@ const getPokemonFromMainPageSearch = (event) => {
                 }
             })
 
-        })
+        }})
 }
 document.getElementById(`searchButton`).addEventListener(`click`, getPokemonFromMainPageSearch)
 
@@ -502,4 +503,4 @@ function autocomplete(inp, arr) {
   });
   }
 
-  autocomplete(document.getElementById("myInput"), countries);
+  autocomplete(document.getElementById("searchPokemonInput"), countries);

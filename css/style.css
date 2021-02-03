@@ -14,12 +14,14 @@
     margin-bottom: 2%;
 }
 
+img.pokemonSprite{
+  filter:none;
+  transition: filter .4s;
+}
+
 img.pokemonSprite:hover {
         filter: drop-shadow(8px 8px 0px #007ce29d);
         cursor:pointer;
-        -webkit-transition: filter 0.2s ease-in;
-        -moz-transition: filter 0.2s ease-in;
-        -o-transition: filter 0.2s ease-in;
 }
 
 #pokemonSprites{
@@ -27,8 +29,7 @@ img.pokemonSprite:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1%;
-    
+    margin-top: 1%; 
 }
 
 header{
@@ -107,24 +108,25 @@ body, html {
   #nextPreviousDiv button{
       margin: 4% 10% 4% 10%;
       font-size: 40px;
-      font-weight: 250;
+      font-weight: 300;
       color: rgb(234,65,53);
       border: none;
       background-color:rgba(247, 247, 247, 0);
       outline: none;
+      font-family: 'Montserrat', sans-serif;
+      filter: none;
+      transition: filter .45s;
   }
 
-  #nextPreviousDiv button:hover{
-    filter: drop-shadow(0px 10px 0px #007ce29d);
+  #previousButton:hover{
+    filter: drop-shadow(-25px 0px 0px #007ce29d);
     cursor:pointer;
-    -webkit-transition: filter 0.35s ease-in;
-    -moz-transition: filter 0.35s ease-in;
-    -o-transition: filter 0.35s ease-in;
-}
+  }
 
-#nextPreviousDiv button :active{
-    outline: none;
-}
+  #nextButton:hover{
+    filter: drop-shadow(25px 0px 0px #007ce29d);
+    cursor:pointer;
+  }
 
 #searchButton{
     margin: 1%;
@@ -138,14 +140,13 @@ body, html {
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     outline: none;
+    filter: none;
+    transition: filter .45s;
 }
 #searchButton:hover{
     cursor: pointer;
-    filter: drop-shadow(0px 20px 0px #007ce29d);
+    filter: drop-shadow(0px 7px 1px #007ce26e);
     cursor:pointer;
-    -webkit-transition: filter .4s ease-in;
-    -moz-transition: filter .4s ease-in;
-    -o-transition: filter .4s ease-in;
 }
 
 form{
@@ -170,9 +171,18 @@ form{
     height: 30px;
     font-size: 18px;
     outline:none;
+    filter: none;
+    transition: filter .5s;
   }
+  input:hover{
+    cursor:pointer ;
+    cursor: pointer;
+    filter: drop-shadow(0px 7px 1px #007ce294);
+    cursor:pointer;
+  }
+
   input[type=text] {
-    background-color: #f1f1f100;
+    background-color: #ffdcdc00;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 350;
