@@ -17,9 +17,9 @@
 img.pokemonSprite:hover {
         filter: drop-shadow(8px 8px 0px #007ce29d);
         cursor:pointer;
-        -webkit-transition: filter 0.1s ease-in;
-        -moz-transition: filter 0.1s ease-in;
-        -o-transition: filter 0.1s ease-in;
+        -webkit-transition: filter 0.2s ease-in;
+        -moz-transition: filter 0.2s ease-in;
+        -o-transition: filter 0.2s ease-in;
 }
 
 #pokemonSprites{
@@ -32,6 +32,10 @@ img.pokemonSprite:hover {
 }
 
 header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: right;
     background-color: rgb(247,247,247);
     width: 100%;
 }
@@ -113,13 +117,44 @@ body, html {
   #nextPreviousDiv button:hover{
     filter: drop-shadow(0px 10px 0px #007ce29d);
     cursor:pointer;
-    -webkit-transition: filter 0.1s ease-in;
-    -moz-transition: filter 0.1s ease-in;
-    -o-transition: filter 0.1s ease-in;
+    -webkit-transition: filter 0.35s ease-in;
+    -moz-transition: filter 0.35s ease-in;
+    -o-transition: filter 0.35s ease-in;
 }
 
 #nextPreviousDiv button :active{
     outline: none;
+}
+
+#searchButton{
+    margin: 1%;
+    background-color:rgba(234, 65, 53, 0);
+    border: none;
+    color: rgb(234,65,53);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+#searchButton:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 20px 0px #007ce29d);
+    cursor:pointer;
+    -webkit-transition: filter .4s ease-in;
+    -moz-transition: filter .4s ease-in;
+    -o-transition: filter .4s ease-in;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /*  */
@@ -130,22 +165,24 @@ body, html {
     display: inline-block;
   }
   input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
+    border:none;
+    padding: 0;
+    height: 30px;
+    font-size: 18px;
+    outline:none;
   }
   input[type=text] {
-    background-color: #f1f1f1;
+    background-color: #f1f1f100;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350;
+    color:  rgb(234,65,53);
+    text-align: center;
   }
-  input[type=submit] {
-    background-color: DodgerBlue;
-    color: #fff;
-  }
+
   .autocomplete-items {
     position: absolute;
-    border: 1px solid #d4d4d4;
+    border: none;
     border-bottom: none;
     border-top: none;
     z-index: 99;
@@ -153,19 +190,25 @@ body, html {
     top: 100%;
     left: 0;
     right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: rgb(234,65,53) ;
+    text-align: center;
   }
   .autocomplete-items div {
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
-    background-color: #fff;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.938);
     border-bottom: 1px solid #d4d4d4;
   }
   .autocomplete-items div:hover {
     /*when hovering an item:*/
-    background-color: #e9e9e9;
+    background-color: rgb(87, 171, 255) !important;
+    color: #ffffff;
   }
   .autocomplete-active {
     /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important;
+    background-color: rgb(87, 171, 255) !important;
     color: #ffffff;
   }
