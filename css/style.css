@@ -223,16 +223,22 @@ form{
     color: #ffffff;
   }
 
-  @media screen 
-  and (-webkit-device-pixel-ratio:3) 
-  and (orientation: portrait) {
+  @media 
+  only screen and (-webkit-min-device-pixel-ratio: 4),
+  only screen and (   min--moz-device-pixel-ratio: 4),
+  only screen and (     -o-min-device-pixel-ratio: 4/1),
+  only screen and (        min-device-pixel-ratio: 4),
+  only screen and (                min-resolution: 570dpi),
+  only screen and (                min-resolution: 4dppx){
+
     #pokemon-logo{
-      max-width: 20%;
+      max-width: 30%;
       margin-top: 5%;
       margin-bottom: 3%;
-      margin-right: 20%;
+      margin-right: 88%;
   }
-  #officialArt{
+  
+    #officialArt{
     max-width: 192px;
     filter: drop-shadow(8px 8px 0px rgba(234, 65, 53, 0.781));
 }
