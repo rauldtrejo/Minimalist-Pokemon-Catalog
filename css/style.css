@@ -223,15 +223,18 @@ form{
     color: #ffffff;
   }
 
-  @media 
-  only screen and (-webkit-min-device-pixel-ratio: 4),
-  only screen and (   min--moz-device-pixel-ratio: 4),
-  only screen and (     -o-min-device-pixel-ratio: 4/1),
-  only screen and (        min-device-pixel-ratio: 4),
-  only screen and (                min-resolution: 570dpi),
-  only screen and (                min-resolution: 4dppx){
 
+  
+/*  */
+
+
+  @media only screen and (max-width: 412px) {
+
+    .hidden{
+      display: none;
+    }
     #pokemon-logo{
+      min-width: 130px;
       max-width: 30%;
       margin-top: 5%;
       margin-bottom: 3%;
@@ -242,47 +245,38 @@ form{
     max-width: 192px;
     filter: drop-shadow(8px 8px 0px rgba(234, 65, 53, 0.781));
 }
-#infoDiv{
-  margin-right: 0%;
-  margin-left: 5%;
-  font-size: 14px;
-}
+  #infoDiv{
+    margin-right: 0%;
+    margin-left: 5%;
+    font-size: 14px;
+  }
 
-#nextPreviousDiv{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0%;
-  margin-top: 0%;
-}
-#fetchedPokemon{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-}
+  #nextPreviousDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  #fetchedPokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 
-#spriteDiv{
-  margin-right: 5%;
-}
-body, html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  background-color: rgb(247,247,247);
-}
+  #spriteDiv{
+    margin-right: 5%;
+  }
 
-header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(247,247,247);
-}
-  
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247,247,247);
+  }
+    
 }
