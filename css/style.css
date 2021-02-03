@@ -230,9 +230,9 @@ form{
 
   @media only screen and (max-width: 412px) {
 
-    .hidden{
+    /* .hidden{
       display: none;
-    }
+    } */
     #pokemon-logo{
       min-width: 130px;
       max-width: 30%;
@@ -274,6 +274,7 @@ form{
 
   header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(247,247,247);
