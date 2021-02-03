@@ -224,9 +224,7 @@ form{
   }
 
   @media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 3) 
+  and (-webkit-device-pixel-ratio:3) 
   and (orientation: portrait) {
     #pokemon-logo{
       max-width: 20%;
