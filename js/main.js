@@ -2,7 +2,7 @@ console.log(`Sanity Check`)
 
 let pokedexUrl = `https://pokeapi.co/api/v2/pokedex/1/`
 
-// The Folllowing function creates the main page, it fetches all pokemon entries, creates an img element, fetches the pokemon sprite from github and appends the img in a grid. At the end of the process it creates a grid that displays all the pokemon that exist.
+// The Folllowing function creates the main page, it fetches all pokemon entries, creates an img for each one, fetches the pokemon sprite from github and appends the img in a grid. At the end of the process it creates a grid that displays all the pokemon that exist.
 
 var countries = [];
 function getPokemons(event) {
@@ -23,6 +23,8 @@ function getPokemons(event) {
         })
 }
 getPokemons()
+
+// The Following function is executed when selecting a pokemon from the main page grid. It will create an information div, an image div, the previous and next buttons, and it will create a paragraph element for each element of information fetched from the API. It will then fetch the pokemon information from the API and change the innertext values of the elements created and add click events to the next and previous buttons. This creates the basic functionality of the page.
 
 document.getElementById("pokemonSprites").addEventListener("click", function (e) {
     if (e.target && e.target.nodeName == "IMG") {
