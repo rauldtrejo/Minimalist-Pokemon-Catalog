@@ -14,12 +14,14 @@
     margin-bottom: 2%;
 }
 
+img.pokemonSprite{
+  filter:none;
+  transition: filter .4s;
+}
+
 img.pokemonSprite:hover {
         filter: drop-shadow(8px 8px 0px #007ce29d);
         cursor:pointer;
-        -webkit-transition: filter 0.1s ease-in;
-        -moz-transition: filter 0.1s ease-in;
-        -o-transition: filter 0.1s ease-in;
 }
 
 #pokemonSprites{
@@ -27,11 +29,14 @@ img.pokemonSprite:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1%;
-    
+    margin-top: 1%; 
 }
 
 header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: right;
     background-color: rgb(247,247,247);
     width: 100%;
 }
@@ -44,6 +49,9 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     background-color: rgb(247,247,247);
+    min-width:360px;
+    width: auto !important;
+    width:360px;
   }
 
   #infoDiv{
@@ -103,21 +111,173 @@ body, html {
   #nextPreviousDiv button{
       margin: 4% 10% 4% 10%;
       font-size: 40px;
-      font-weight: 250;
+      font-weight: 300;
       color: rgb(234,65,53);
       border: none;
       background-color:rgba(247, 247, 247, 0);
       outline: none;
+      font-family: 'Montserrat', sans-serif;
+      filter: none;
+      transition: filter .45s;
   }
 
-  #nextPreviousDiv button:hover{
-    filter: drop-shadow(0px 10px 0px #007ce29d);
+  #previousButton:hover{
+    filter: drop-shadow(-25px 0px 0px #007ce29d);
     cursor:pointer;
-    -webkit-transition: filter 0.1s ease-in;
-    -moz-transition: filter 0.1s ease-in;
-    -o-transition: filter 0.1s ease-in;
+  }
+
+  #nextButton:hover{
+    filter: drop-shadow(25px 0px 0px #007ce29d);
+    cursor:pointer;
+  }
+
+#searchButton{
+    margin: 1%;
+    background-color:rgba(234, 65, 53, 0);
+    border: none;
+    color: rgb(234,65,53);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    filter: none;
+    transition: filter .45s;
+}
+#searchButton:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 7px 1px #007ce26e);
+    cursor:pointer;
 }
 
-#nextPreviousDiv button :active{
-    outline: none;
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*  */
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+  }
+  input {
+    border:none;
+    padding: 0;
+    height: 30px;
+    font-size: 18px;
+    outline:none;
+    filter: none;
+    transition: filter .5s;
+  }
+  input:hover{
+    cursor:pointer ;
+    cursor: pointer;
+    filter: drop-shadow(0px 7px 1px #007ce294);
+    cursor:pointer;
+  }
+
+  input[type=text] {
+    background-color: #ffdcdc00;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350;
+    color:  rgb(234,65,53);
+    text-align: center;
+  }
+
+  .autocomplete-items {
+    position: absolute;
+    border: none;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: rgb(234,65,53) ;
+    text-align: center;
+  }
+  .autocomplete-items div {
+    padding: 5px;
+    cursor: pointer;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.938);
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: rgb(87, 171, 255) !important;
+    color: #ffffff;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: rgb(87, 171, 255) !important;
+    color: #ffffff;
+  }
+
+
+  
+/*  */
+
+
+  @media only screen and (max-width: 950px) {
+
+    #pokemon-logo{
+      min-width: 130px;
+      max-width: 30%;
+      margin-top: 5%;
+      margin-bottom: 3%;
+      margin-right: 88%;
+  }
+  
+    #officialArt{
+    max-width: 192px;
+    filter: drop-shadow(5px 3px 0px rgba(234, 65, 53, 0.781));
+}
+  #infoDiv{
+    margin-right: 0%;
+    margin-left: 5%;
+    font-size: 14px;
+  }
+
+  #nextPreviousDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  #fetchedPokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  #spriteDiv{
+    margin-right: 5%;
+  }
+
+  header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247,247,247);
+  }
+    
 }
