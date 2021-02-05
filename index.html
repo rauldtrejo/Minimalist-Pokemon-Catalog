@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist PokeCatalog</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> The Minimalist PokeCatalog</title>
     <script defer src="js/main.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
-        </style>
-</head>
-<body>
-
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+    </style>
+  </head>
+  <body>
     <header>
+      <img id="pokemon-logo" src="images/minimalistPokemon.png" alt="" />
 
-        <img id="pokemon-logo" src="images/minimalistPokemon.png" alt="">
+      <form class="hidden" autocomplete="off" onsubmit="return false">
+        <div
+          class="autocomplete"
+          style="width: 200px; text-transform: uppercase"
+        >
+          <input
+            id="searchPokemonInput"
+            type="text"
+            name="searchPokemon"
+            style="text-transform: uppercase"
+            placeholder="NAME OR ID #"
+          />
+        </div>
 
-        <form class="hidden" autocomplete="off" onsubmit="return false" >
-
-            <div class="autocomplete" style="width:200px; text-transform:uppercase ">
-              <input id="searchPokemonInput" type="text"  name="searchPokemon"  style="text-transform:uppercase"  placeholder="SEARCH POKEMON" >
-            </div>
-
-            <button id="searchButton">SEARCH</button>
-
-          </form>
-
+        <button id="searchButton">SEARCH</button>
+      </form>
     </header>
-    
+
     <div id="mainDiv">
+      <div id="fetchedPokemon"></div>
 
-    <div id="fetchedPokemon"></div>
-
-    <div id="pokemonSprites"></div>
-
+      <div id="pokemonSprites"></div>
     </div>
-
-    <!-- <footer>
-        <p>The Minimalist Pokemon Catalog</p>
-    </footer>
-     -->
-</body>
+  </body>
 </html>
