@@ -30,7 +30,7 @@ img.pokemonSprite:hover {
   margin-top: 1%;
 }
 
-#spriteDiv{
+#spriteDiv {
   margin-top: 3%;
 }
 
@@ -51,7 +51,7 @@ html {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  color:rgb(104, 104, 104);
+  color: rgb(104, 104, 104);
   font-size: 18px;
   background-color: rgb(247, 247, 247);
   min-width: 360px;
@@ -103,7 +103,7 @@ html {
 
 #nextPreviousDiv button {
   margin: 4% 13% 4% 13%;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 300;
   color: rgb(234, 65, 53);
   border: none;
