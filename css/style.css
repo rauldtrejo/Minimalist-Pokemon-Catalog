@@ -4,9 +4,7 @@
   left: 45%;
   margin-top: 1%;
   margin-bottom: 1%;
-  -webkit-transition: margin 0.5s ease-out;
-  -moz-transition: margin 0.5s ease-out;
-  -o-transition: margin 0.5s ease-out;
+  transition: margin 0.5s;
 }
 
 #pokemon-logo:hover {
@@ -32,6 +30,10 @@ img.pokemonSprite:hover {
   margin-top: 1%;
 }
 
+#spriteDiv{
+  margin-top: 3%;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -48,7 +50,9 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
+  color:rgb(104, 104, 104);
+  font-size: 18px;
   background-color: rgb(247, 247, 247);
   min-width: 360px;
   width: auto !important;
@@ -57,6 +61,7 @@ html {
 
 #infoDiv {
   margin-right: 10%;
+  margin-top: 3%;
 }
 #fetchedPokemon {
   display: flex;
@@ -88,19 +93,6 @@ html {
   font-weight: 500;
 }
 
-footer {
-  background-color: rgb(234, 65, 53);
-  width: 100%;
-  bottom: 0;
-  color: rgb(247, 247, 247);
-  font-weight: 600;
-  font-size: 14px;
-}
-
-footer p {
-  margin: 10px;
-}
-
 #nextPreviousDiv {
   display: flex;
   flex-direction: row;
@@ -110,7 +102,7 @@ footer p {
 }
 
 #nextPreviousDiv button {
-  margin: 4% 10% 4% 10%;
+  margin: 4% 13% 4% 13%;
   font-size: 40px;
   font-weight: 300;
   color: rgb(234, 65, 53);
@@ -150,7 +142,6 @@ footer p {
 #searchButton:hover {
   cursor: pointer;
   filter: drop-shadow(0px 7px 1px #007ce26e);
-  cursor: pointer;
 }
 
 form {
@@ -179,8 +170,6 @@ input {
   transition: filter 0.5s;
 }
 input:hover {
-  cursor: pointer;
-  cursor: pointer;
   filter: drop-shadow(0px 7px 1px #007ce294);
   cursor: pointer;
 }
@@ -248,21 +237,11 @@ input[type="text"] {
     font-size: 14px;
   }
 
-  #nextPreviousDiv {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0%;
-    margin-top: 0%;
+  #nextPreviousDiv button {
+    margin: 10% 20% 10% 20%;
   }
   #fetchedPokemon {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
+    margin-top: 5%;
   }
 
   #spriteDiv {
@@ -270,7 +249,6 @@ input[type="text"] {
   }
 
   header {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

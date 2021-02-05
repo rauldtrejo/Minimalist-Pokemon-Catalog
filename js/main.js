@@ -49,10 +49,11 @@ const createPageElementsAndFetchInfo = (jsonData) => {
 
   let pokemonInfoDiv = document.createElement(`div`);
   let pokemonSpriteDiv = document.createElement(`div`);
-  let PokemonFrontBack = document.createElement(`div`);
+  let pokemonFrontBack = document.createElement(`div`);
   let nextPreviousButton = document.createElement(`div`);
 
   let pokemonName = document.createElement(`p`);
+  let pokemonIdNumber = document.createElement(`P`)
   let pokemonWeight = document.createElement(`p`);
   let pokemonHeight = document.createElement(`p`);
   let pokemonType = document.createElement(`p`);
@@ -61,7 +62,7 @@ const createPageElementsAndFetchInfo = (jsonData) => {
 
   pokemonInfoDiv.setAttribute(`id`, `infoDiv`);
   pokemonSpriteDiv.setAttribute(`id`, `spriteDiv`);
-  PokemonFrontBack.setAttribute(`id`, `frontBackDiv`);
+  pokemonFrontBack.setAttribute(`id`, `frontBackDiv`);
   nextPreviousButton.setAttribute(`id`, `nextPreviousDiv`);
 
   pokemonNext.setAttribute(`id`, `nextButton`);
@@ -70,6 +71,7 @@ const createPageElementsAndFetchInfo = (jsonData) => {
   pokemonPrevious.setAttribute(`value`, `${pokemonId - 1}`);
 
   pokemonName.setAttribute(`id`, `pokemonName`);
+  pokemonIdNumber.setAttribute(`id`, `pokemonIdNumber`)
   pokemonWeight.setAttribute(`id`, `pokemonWeight`);
   pokemonHeight.setAttribute(`id`, `pokemonHeigt`);
   pokemonType.setAttribute(`id`, `type`);
@@ -79,6 +81,7 @@ const createPageElementsAndFetchInfo = (jsonData) => {
   let pokemonHeightInMeters = pokemon.height / 10;
 
   pokemonName.innerText = pokemonNameString.toUpperCase();
+  pokemonIdNumber.innerText = `POKEDEX # ${pokemon.id}`
   pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`;
   pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`;
   pokemonType.innerText = `TYPE:`;
@@ -90,6 +93,7 @@ const createPageElementsAndFetchInfo = (jsonData) => {
   document.getElementById(`mainDiv`).appendChild(nextPreviousButton);
 
   document.getElementById(`infoDiv`).appendChild(pokemonName);
+  document.getElementById(`infoDiv`).appendChild(pokemonIdNumber)
   document.getElementById(`infoDiv`).appendChild(pokemonWeight);
   document.getElementById(`infoDiv`).appendChild(pokemonHeight);
   document.getElementById(`infoDiv`).appendChild(pokemonType);
@@ -127,7 +131,7 @@ const createPageElementsAndFetchInfo = (jsonData) => {
   );
 
   document.getElementById(`spriteDiv`).appendChild(pokemonOfficial);
-  document.getElementById(`spriteDiv`).appendChild(PokemonFrontBack);
+  document.getElementById(`spriteDiv`).appendChild(pokemonFrontBack);
 
   document.getElementById(`frontBackDiv`).appendChild(pokemonFront);
   document.getElementById(`frontBackDiv`).appendChild(pokemonBack);
@@ -160,6 +164,7 @@ const getNextOrPreviousPokemon = (pokemon) => {
 
       let pokemonName = document.getElementById(`pokemonName`);
       let pokemonWeight = document.getElementById(`pokemonWeight`);
+      let pokemonIdNumber = document.getElementById(`pokemonIdNumber`)
       let pokemonHeight = document.getElementById(`pokemonHeigt`);
       let pokemonFront = document.getElementById(`frontSprite`);
       let pokemonBack = document.getElementById(`backSprite`);
@@ -175,6 +180,7 @@ const getNextOrPreviousPokemon = (pokemon) => {
       let pokemonHeightInMeters = pokemon.height / 10;
 
       pokemonName.innerText = pokemonNameString.toUpperCase();
+      pokemonIdNumber.innerText =`POKEDEX # ${pokemon.id}`
       pokemonWeight.innerText = `WEIGHT: ${pokemonWeightInKg}Kg`;
       pokemonHeight.innerText = `HEIGHT: ${pokemonHeightInMeters}m`;
 
